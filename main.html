@@ -1,0 +1,42 @@
+<head> 
+
+	<link rel="stylesheet" type="text/css" class="__meteor-css__" href="main2.css">
+
+    <title>Connect Four by Nigs</title>
+</head>
+
+<body>
+<script type="text/javascript">__meteor_runtime_config__ = JSON.parse(decodeURIComponent("%7B%22meteorRelease%22%3A%22METEOR%401.3.2.4%22%2C%22meteorEnv%22%3A%7B%22NODE_ENV%22%3A%22production%22%2C%22TEST_METADATA%22%3A%22%7B%7D%22%7D%2C%22PUBLIC_SETTINGS%22%3A%7B%7D%2C%22ROOT_URL%22%3A%22https%3A%2F%2Fconnect-four-nigs.herokuapp.com%22%2C%22ROOT_URL_PATH_PREFIX%22%3A%22%22%2C%22appId%22%3A%2212lxjlw10k2zvtit9ha8%22%2C%22autoupdateVersion%22%3A%2243d586540b01d48a8cccfc145d1fe68773dce9c5%22%2C%22autoupdateVersionRefreshable%22%3A%226f0131b5d7581dcb00a55ef55b4a12d5e5da1370%22%2C%22autoupdateVersionCordova%22%3A%22none%22%7D"));</script>
+    <script type="text/javascript" src="test.js"></script>
+ {{> hello}}
+</body>
+
+<template name="hello">
+    <div id="etc">
+        <h1>Connect Four by Nigs</h1>
+        <small>MeteorJS, HTML5 Canvas.  Code available at <a href="https://github.com/nmenego/connect-four.git">Github</a></small>
+        <p>Current player: <strong style="color: {{player}}">{{player}}</strong>'s turn</p>
+        <p>Game status: {{won}}</p>
+        <input type="radio" id="a" name="opponent" value="HumanVsHuman" checked/>
+        <label for="a">Human Vs. Human</label>
+        <br/>
+        <input type="radio" id="b" name="opponent" value="HumanVsComputer" />
+        <label for="b">Human Vs. Computer</label>
+        <br/>
+        <label for="computer_level">Computer Level:</label>
+        <select id="computer_level" disabled="disabled">
+            <option value="2">Useless</option>
+            <option value="4">Newb</option>
+            <option value="6" selected="selected">Average</option>
+            <option value="7">Difficult</option>
+            <option value="8">GODLIKE</option>
+        </select>
+        <br/>
+        <br/>
+        <br/>
+        <button id="reset">New Game</button>
+    </div>
+    <div id="canvas">
+        <canvas id="mycanvas" width="700" height="600"></canvas>
+    </div>
+</template>
